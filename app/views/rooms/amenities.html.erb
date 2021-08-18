@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'room_sidebar' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading p-2">
+        Amenities
+      </div>
+      <div class="panel-body py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <%= form_for @room do |f| %>
+                <div class="row form-group">
+                  <div class="col-md-4">
+                    <%= f.check_box :is_tv %> TV
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_kitchen %> Kitchen
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_internet %> Internet
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <div class="col-md-4">
+                    <%= f.check_box :is_heating %> Heating
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.check_box :is_air %> Air Conditioning
+                  </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="text-center">
+                  <%= f.submit "Save", class: "btn btn-form" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <h2 class='text-center'>Log in</h2>
+    <%= render 'shared/devisealert'%>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group mb-2">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email Address eg. johndoe@man.com', class: 'form-control' %>
+      </div>
+      <div class="form-group mb-2">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'form-control' %>
+      </div>
+      <div class="mb-2">
+        <% if devise_mapping.rememberable? %>
+          <%= f.check_box :remember_me %> Remember me
+          <span class="float-end">
+            <%= link_to  "Forgot Password", new_user_password_path %>
+          </span>
+        <% end %>
+      </div>
+      <div class="actions mb-2">
+        <%= f.submit "Log in", class: 'btn btn-normal btn-block text-white' %>
+      </div>
+    <% end %>
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post, class: "btn btn-#{provider} btn-outline-secondary btn-block" %><br />
+      <% end %>
+    <% end %>
+  </div>
+</div>
