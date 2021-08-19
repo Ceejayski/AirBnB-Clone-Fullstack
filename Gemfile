@@ -56,13 +56,14 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'carrierwave', '~> 2.0'
+gem 'cloudinary'
 gem 'devise'
+gem 'figaro'
+gem 'file_validators'
 gem 'mailgun-ruby'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'figaro'
 gem 'omniauth-rails_csrf_protection'
-gem 'carrierwave', '~> 2.0'
-gem 'cloudinary'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
